@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  margin: 0;
+  background-image: url(./image/bg.jpeg);
+  background-size: cover;
+  height: 100vh;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.title-text {
+  font-weight: 700;
+}
+
+.nav .title {
+  position: relative;
+  font-size: 5rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  height: 1.2em;
+  overflow: hidden;
+  margin-left: 60px;
+  margin-top: 60px;
+  z-index: 2;
+}
+.nav .inner {
+  transform: translateY(0);
+  transition: transform 0.6s;
+}
+
+.icon {
+  position: absolute;
+  left: 400px;
+  background-color: black;
+  width: 96px;
+  height: 96px;
+  border-radius: 100%;
+  padding: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.icon svg {
+  transition: transform 0.6s;
+}
+
+.icon svg path {
+  stroke: white;
+}
+
+.dropdown {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  min-height: 480px;
+  display: flex;
+  align-items: end;
+  width: 100%;
+  padding-left: 60px;
+  padding-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.6s;
+  transform: translateY(-100%);
+}
+.dropdown ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.dropdown li {
+  transition: transform 0.5s, opacity 0.5s;
+  transition-delay: 0.3s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+.dropdown li:nth-of-type(1) {
+  transition-delay: 0.2s;
+}
+.dropdown li:nth-of-type(2) {
+  transition-delay: 0.3s;
+}
+.dropdown li:nth-of-type(3) {
+  transition-delay: 0.4s;
+}
+.dropdown li:nth-of-type(4) {
+  transition-delay: 0.5s;
+}
+.dropdown a {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  transition: transform 0.5s;
+  position: relative;
+}
+.dropdown a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: #fff;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.nav:hover .inner {
+  transform: translateY(-100%);
+}
+.nav:hover .icon {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.nav:hover .icon svg {
+  transform: rotate(180deg);
+}
+.nav:hover .dropdown {
+  transform: translateY(0);
+}
+.nav:hover li {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.dropdown a:hover::after {
+  transform: scale(1);
+  opacity: 1;
+}/*# sourceMappingURL=all.css.map */
